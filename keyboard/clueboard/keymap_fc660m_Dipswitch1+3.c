@@ -3,23 +3,23 @@
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* 0: qwerty
      * ,-----------------------------------------------------------.  ,---.
-     * |  `|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|Yen| BS|  |Ins|
+     * |  `|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =| BS    |  |Ins|
      * |-----------------------------------------------------------|  |---|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|    \|  |Del|
      * |-----------------------------------------------------------|  `---'
-     * |Caps  |  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '| # | Ent|
+     * |Ctrl|  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '| # | Ent|
      * |--------------------------------------------------------------.
-     * |Shift| \|  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|  \|Shift| Up|
+     * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|  \|Shift| Up|
      * |------------------------------------------------------------------.
-     * |Ctrl|Alt|Gui |MHen| Space| Space|Henk|Gui |Ctrl|  Fn|Left|Down|Rgt|
+     * |Caps|Fn|Alt |           space         |ALT |CTRL|Gui|Left|Down|Rgt|
      * `------------------------------------------------------------------'
      */
     KEYMAP(
         GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, JYEN,BSPC, INS, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS,      DEL, \
-        CAPS,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,NUHS,ENT,  \
+        LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,NUHS,ENT,  \
         LSFT,NUBS,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,  RO,RSFT,  UP, \
-        LCTL,LALT,LGUI,MHEN,     SPC, SPC,      HENK,RGUI,RCTL,FN0,      LEFT,DOWN,RGHT),
+        CAPS,FN0,LALT,MHEN,     SPC, SPC,      HENK,RALT,RCTL,LGUI,      LEFT,DOWN,RGHT),
     /* 1: colemak */
     KEYMAP(
         GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, JYEN,BSPC, INS, \
@@ -27,13 +27,13 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         BSPC,A,   R,   S,   T,   D,   H,   N,   E,   I,   O,   QUOT,NUHS, ENT, \
         LSFT,NUBS,Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,  RO,RSFT,  UP, \
         LCTL,LALT,LGUI,MHEN,     SPC, SPC,      HENK,RGUI,RCTL, FN0,     LEFT,DOWN,RGHT),
-    /* 2: dvorak */
+    /* 2: xperiment */
     KEYMAP(
-        GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   LBRC,RBRC,JYEN,BSPC, INS, \
-        TAB, QUOT,COMM,DOT, P,   Y,   F,   G,   C,   R,   L,   SLSH,EQL, BSLS,      DEL, \
-        CAPS,A,   O,   E,   U,   I,   D,   H,   T,   N,   S,   MINS,NUHS, ENT, \
-        LSFT,NUBS,SCLN,Q,   J,   K,   X,   B,   M,   W,   V,   Z,     RO,RSFT,  UP, \
-        LCTL,LALT,LGUI,MHEN,     SPC, SPC,      HENK,RGUI,RCTL, FN0,     LEFT,DOWN,RGHT),
+          GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, JYEN,BSPC, INS, \
+        TAB, Q,   UP,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS,      DEL, \
+        LCTL,LEFT,DOWN,RIGHT,D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,NUHS,ENT,  \
+        LSFT,NUBS,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,  RO,RSFT,  UP, \
+        CAPS,FN0,LALT,MHEN,     SPC, SPC,      HENK,RALT,RCTL,LGUI,      LEFT,DOWN,RGHT),
     /* 3: workman */
     KEYMAP(
         GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, JYEN,BSPC, INS, \
@@ -58,7 +58,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     KEYMAP(
         ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, TRNS,TRNS,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,TRNS,TRNS,     TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,TRNS,TRNS,     FNL, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGUP,TRNS,TRNS,TRNS,TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, END,PGDN,TRNS,TRNS,PGUP, \
         TRNS,TRNS,TRNS,TRNS,     TRNS,TRNS,     TRNS,TRNS,MENU, FN0,     HOME,PGDN, END),
@@ -76,7 +76,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-------------------------------------------------------------------'
      * Lq: set Qwerty layout
      * Lc: set Colemak layout
-     * Ld: set Dvorak layout
+     * Ld: set [experiment] layout
      * Lw: set Workman layout
      */
     KEYMAP(
